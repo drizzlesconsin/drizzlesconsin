@@ -11,7 +11,7 @@
                     }
                 }
 
-                @keyframes gradientBackground {
+                @keyframes gradient-background {
                     0% {
                         background-position: 0% 50%;
                     }
@@ -23,7 +23,7 @@
                     }
                 }
 
-                @keyframes fadeIn {
+                @keyframes fade-in {
                     0% {
                         opacity: 0;
                     }
@@ -31,6 +31,19 @@
                         opacity: 0;
                     }
                     100% {
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes puff-in {
+                    0% {
+                        transform: scale(2);
+                        filter: blur(4px);
+                        opacity: 0;
+                    }
+                    100% {
+                        transform: scale(1);
+                        filter: blur(0px);
                         opacity: 1;
                     }
                 }
@@ -55,7 +68,7 @@
                     height: 300px;
                     background: linear-gradient(-45deg, #fc5c7d, #6a82fb, #05dfd7);
                     background-size: 600% 500%;
-                    animation: gradientBackground 10s ease infinite;
+                    animation: gradient-background 10s ease infinite;
                     border-radius: 10px;
                     color: white;
                     text-align: center;
@@ -77,12 +90,29 @@
                 p {
                     font-size: 20px;
                     text-shadow: 0 1px 0 #efefef;
-                    animation: 5s ease 0s normal forwards 1 fadeIn;
+                    animation: 3s ease 0s normal forwards 1 fade-in;
+                }
+                .language {
+                    display: flex;
+                    gap: 8px;
+                    animation: 10s ease 0s normal forwards 1 puff-in;
+                }
+                .language img {
+                    background-color: rgba(255, 255, 255, .85);
+                    padding: 2px;
+                    border-radius: 4px;
                 }
             </style>
             <div class="container">
                 <h1>Hello! I'm Drizzle</h1>
                 <p>Nice to see you</p>
+                <div class="language">
+                    <img width="16" height="16" src="https://raw.githubusercontent.com/github/explore/main/topics/javascript/javascript.png" />
+                    <img width="16" height="16" src="https://raw.githubusercontent.com/github/explore/main/topics/typescript/typescript.png" />
+                    <img width="16" height="16" src="https://raw.githubusercontent.com/github/explore/main/topics/react/react.png" />
+                    <img width="16" height="16" src="https://raw.githubusercontent.com/github/explore/main/topics/flutter/flutter.png" />
+                    <img width="16" height="16" src="https://raw.githubusercontent.com/github/explore/main/topics/nodejs/nodejs.png" />
+                </div>
             </div>
         </div>
     </foreignObject>
